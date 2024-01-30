@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UserRegistrationTest {
+public class UserRegistrationSuccessTest {
     public String userID;
     public String username;
     public String password;
