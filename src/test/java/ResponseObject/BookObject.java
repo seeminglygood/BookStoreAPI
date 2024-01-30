@@ -4,27 +4,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BookObject {
     @JsonProperty("isbn")
-    private String isbn;
-
+    public String isbn;
     @JsonProperty("title")
-    private String title;
+    public String title;
     @JsonProperty("subTitle")
-    private String subTitle;
-
-    @JsonProperty ("publish_date")
-    private String publish_date;
-
+    public String subTitle;
+    @JsonProperty("author")
+    public String author;
+    @JsonProperty("publish_date")
+    public  String publish_date;
     @JsonProperty("publisher")
-    private String publisher;
-
+    public String publisher;
     @JsonProperty("pages")
-    private Integer pages;
-
+    public Integer pages;
     @JsonProperty("description")
-    private String description;
-
+    public String description;
     @JsonProperty("website")
-    private String website;
+    public String website;
 
     public String getIsbn() {
         return isbn;
@@ -38,7 +34,11 @@ public class BookObject {
         return subTitle;
     }
 
-    public String getPublich_date() {
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublish_date() {
         return publish_date;
     }
 

@@ -1,7 +1,6 @@
 package RequestObject;
 
 public class RequestAccountToken {
-
     private String userName;
     private String password;
 

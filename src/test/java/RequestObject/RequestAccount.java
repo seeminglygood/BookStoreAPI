@@ -4,8 +4,7 @@ public class RequestAccount {
     private String userName;
     private String password;
 
-    public RequestAccount(String userName, String password) {
-        this.userName = userName;
+    public RequestAccount(String userName, String password) {this.userName = userName;
         this.password = password;
     }
 

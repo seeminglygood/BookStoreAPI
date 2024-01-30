@@ -3,18 +3,14 @@ package ResponseObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ResponseTokenSuccess {
-    //invatam despre adnotari JsonProperty numit si alias, porecla
-
     @JsonProperty("token")
     private String token;
-
     @JsonProperty("expires")
     private String expires;
-
-    //invatam conceptul Compozitie (verisor cu mostenirea) - compozitia construieste obiecte
-
     @JsonProperty("status")
     private String status;
+    @JsonProperty("result")
+    private String result;
 
     public String getToken() {
         return token;
@@ -31,7 +27,4 @@ public class ResponseTokenSuccess {
     public String getResult() {
         return result;
     }
-
-    @JsonProperty("result")
-    private String result;
 }
