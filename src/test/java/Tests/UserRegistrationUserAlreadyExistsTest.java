@@ -54,7 +54,6 @@ public class UserRegistrationUserAlreadyExistsTest {
         //Validam response body-ul requestului
 
         ResponseAccountFailed responseAccountFailed = response.body().as(ResponseAccountFailed.class);
-
         Assert.assertEquals(responseAccountFailed.getCode(), 1204);
         Assert.assertEquals(responseAccountFailed.getMessage(), "User exists!");
 
