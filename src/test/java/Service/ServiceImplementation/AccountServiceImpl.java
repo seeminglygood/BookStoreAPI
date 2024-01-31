@@ -8,7 +8,7 @@ import Service.InterfaceService.AccountServiceInterface;
 import io.restassured.response.Response;
 
 public class AccountServiceImpl implements AccountServiceInterface {
-
+// this is a service implementation for handling various account-related operations
     public AccountAPIService accountAPIService;
     @Override
     public Response createAccount(RequestAccount requestAccount) {
