@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42632f14-5b9b-4dd7-b3a4-df9554b0a18a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ResponseObject/ResponseAccountFailed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationInvalidPasswordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationUserAlreadyExistsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Endpoints/BookStoreEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistration255CharLimitUsernameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernamePasswordTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Endpoints/AccountEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Endpoints/AccountEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Service/CommonAPIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Service/CommonAPIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyPasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyPasswordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationInvalidPasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationInvalidPasswordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationSuccessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationSuccessTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationUserAlreadyExistsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationUserAlreadyExistsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +57,107 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="UserRegistrationEmptyUsernamePasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BookStoreAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.UserRegistrationEmptyUsernamePasswordTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRegistrationEmptyUsernameTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BookStoreAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.UserRegistrationEmptyUsernameTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRegistrationInvalidPasswordTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BookStoreAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.UserRegistrationInvalidPasswordTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRegistrationSuccessTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BookStoreAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.UserRegistrationSuccessTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRegistrationUserAlreadyExistsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BookStoreAPI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.UserRegistrationUserAlreadyExistsTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.UserRegistrationEmptyUsernamePasswordTest" />
+        <item itemvalue="TestNG.UserRegistrationUserAlreadyExistsTest" />
+        <item itemvalue="TestNG.UserRegistrationSuccessTest" />
+        <item itemvalue="TestNG.UserRegistrationInvalidPasswordTest" />
+        <item itemvalue="TestNG.UserRegistrationEmptyUsernameTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

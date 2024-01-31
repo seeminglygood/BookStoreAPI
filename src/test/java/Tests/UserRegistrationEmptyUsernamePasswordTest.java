@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UserRegistrationEmptyUsernameTest {
+public class UserRegistrationEmptyUsernamePasswordTest {
     public String username;
     public String password;
     @Test
@@ -23,7 +23,7 @@ public class UserRegistrationEmptyUsernameTest {
         requestSpecification.contentType("application/json");
 
         username = "";
-        password = "Password!@1234";
+        password = "";
 
         RequestAccount requestAccount = new RequestAccount(username,password );
         requestSpecification.body(requestAccount);

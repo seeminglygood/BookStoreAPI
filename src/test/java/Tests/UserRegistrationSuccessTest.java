@@ -17,8 +17,6 @@ public class UserRegistrationSuccessTest {
     public String username;
     public String password;
     public String token;
-
-
     @Test
     public void testMethod(){
         System.out.println("Step 1 - Create user");
@@ -29,13 +27,11 @@ public class UserRegistrationSuccessTest {
 
         System.out.println("Step 3 - Get new user");
         interactNewUser();
-
     }
-
     public void createUser(){
 
-        // ***** Define client characteristics / specifications: *****
-        // -----------------------------------------------------------------------------------------------------------------------------------------
+// ***** Define client characteristics / specifications: *****
+// -----------------------------------------------------------------------------------------------------------------------------------------
         // RestAssured.given(): RestAssured is a class in the Rest Assured library
         // it provides a starting point for building HTTP requests for testing RESTful APIs
         // the given() method returns an instance of RequestSpecification
@@ -49,8 +45,8 @@ public class UserRegistrationSuccessTest {
         requestSpecification.baseUri("https://demoqa.com"); //specify baseURL
         requestSpecification.contentType("application/json"); //specify json content type
 
-        // ***** Configure the request: *****
-        // -----------------------------------------------------------------------------------------------------------------------------------------
+// ***** Configure the request: *****
+// -----------------------------------------------------------------------------------------------------------------------------------------
 
         username = "Letitia" + System.currentTimeMillis(); //adding a timestamp to the username, so it generates a 'unique' string
         password = "Password!@1";
@@ -70,8 +66,8 @@ public class UserRegistrationSuccessTest {
         // the serialization process is crucial when you need to send structured data, such as an object, in the request body
         requestSpecification.body(requestAccount);
 
-        // ***** Access the response *****
-        // -----------------------------------------------------------------------------------------------------------------------------------------
+// ***** Access the response *****
+// -----------------------------------------------------------------------------------------------------------------------------------------
 
         // access the response by sending a POST request to the "/Account/v1/User" endpoint using the already configured requestSpecification
         // capture the response from the server in the response variable (instance of the Response class in RestAssured)
@@ -84,8 +80,8 @@ public class UserRegistrationSuccessTest {
         // prettyPrint() method is a convenient way to display the response body with proper indentation, making it easier to read
         body.prettyPrint();
 
-        // ***** Perform validations *****
-        // -----------------------------------------------------------------------------------------------------------------------------------------
+// ***** Perform validations *****
+// -----------------------------------------------------------------------------------------------------------------------------------------
 
         // validate the HTTP status code of the response received from the server:
         Assert.assertEquals(response.getStatusCode(), 201);
@@ -105,19 +101,15 @@ public class UserRegistrationSuccessTest {
         //  retrieve the value of the userID attribute from the ResponseAccountSuccess object
         // assign the retrieved value to the variable userID
         userID = responseAccountSuccess.getUserID();
-
     }
 
-
     public void generateToken() {
-
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.baseUri("https://demoqa.com");
         requestSpecification.contentType("application/json");
 
         RequestAccountToken requestAccountToken = new RequestAccountToken(username, password);
         requestSpecification.body(requestAccountToken);
-
 
         Response response = requestSpecification.post("/Account/v1/GenerateToken");
         ResponseBody body = response.getBody();
@@ -136,7 +128,6 @@ public class UserRegistrationSuccessTest {
     }
 
         public void interactNewUser() {
-
             RequestSpecification requestSpecification = RestAssured.given();
             requestSpecification.baseUri("https://demoqa.com");
             requestSpecification.contentType("application/json");
@@ -145,6 +136,7 @@ public class UserRegistrationSuccessTest {
             Response response = requestSpecification.get("/Account/v1/User/" + userID);
             ResponseBody body = response.getBody();
             body.prettyPrint();
+
             Assert.assertEquals(response.getStatusCode(), 200);
 
             ResponseAccountAuthSuccess responseAccountAuthSuccess = response.body().as(ResponseAccountAuthSuccess.class);
@@ -153,5 +145,4 @@ public class UserRegistrationSuccessTest {
             Assert.assertEquals(responseAccountAuthSuccess.getUsername(), username);
             Assert.assertNotNull(responseAccountAuthSuccess.getBooks());
         }
-
     }
