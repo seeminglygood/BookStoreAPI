@@ -1,7 +1,7 @@
-package Tests;
+package ZzZz;
 
-import RequestObject.RequestAccount;
-import ResponseObject.ResponseAccountFailed;
+import Objects.RequestObject.RequestAccount;
+import Objects.ResponseObject.ResponseAccountFailed;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UserRegistrationEmptyUsernamePasswordTest {
+public class UserRegistrationEmptyPasswordTest {
     public String username;
     public String password;
     @Test
@@ -22,7 +22,7 @@ public class UserRegistrationEmptyUsernamePasswordTest {
         requestSpecification.baseUri("https://demoqa.com");
         requestSpecification.contentType("application/json");
 
-        username = "";
+        username =  "Letitia" + System.currentTimeMillis();
         password = "";
 
         RequestAccount requestAccount = new RequestAccount(username,password );

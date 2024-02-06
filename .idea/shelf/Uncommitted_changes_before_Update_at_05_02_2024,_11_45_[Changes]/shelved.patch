@@ -1,0 +1,53 @@
+Index: src/test/java/Service/CommonAPIService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Service;\n\nimport Rest.RestRequest;\nimport Rest.RestRequestType;\nimport io.restassured.RestAssured;\nimport io.restassured.response.Response;\nimport io.restassured.specification.RequestSpecification;\n\npublic class CommonAPIService {\n    // this class contains methods for various types of requests with different parameters\n\n    public Response post(Object body, String url){\n        RequestSpecification requestSpecification = RestAssured.given();\n        requestSpecification.body(body);\n\n        // to implement here: logs for request/ response\n\n            Response response = performRequest(RestRequestType.REQUEST_POST, requestSpecification, url);\n            return response;\n\n    }\n\n    public Response post(Object body, String url, String token){\n        RequestSpecification requestSpecification = RestAssured.given();\n        requestSpecification.header(\"Authorization\", \"Bearer \" + token);\n        requestSpecification.body(body);\n\n        // to implement here: logs for request/ response\n\n        Response response = performRequest(RestRequestType.REQUEST_POST, requestSpecification, url);\n        return response;\n\n    }\n\n    public Response get(String url, String token){\n        RequestSpecification requestSpecification = RestAssured.given();\n        requestSpecification.header(\"Authorization\", \"Bearer \" + token);\n\n        // to implement here: logs for request/ response\n\n        Response response = performRequest(RestRequestType.REQUEST_GET, requestSpecification, url);\n        return response;\n\n    }\n\n    // a RestRequest instance that would call the performRequest method\n    private Response performRequest(String requestType, RequestSpecification requestSpecification, String url){\n        return new RestRequest().performRequest(requestType, requestSpecification, url);\n\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/Service/CommonAPIService.java b/src/test/java/Service/CommonAPIService.java
+--- a/src/test/java/Service/CommonAPIService.java	(revision 0ef08a9d76bdc38ab9e5587b9faa15abd0646bc9)
++++ b/src/test/java/Service/CommonAPIService.java	(date 1707129956764)
+@@ -38,7 +38,7 @@
+ 
+         // to implement here: logs for request/ response
+ 
+-        Response response = performRequest(RestRequestType.REQUEST_GET, requestSpecification, url);
++        Response response = performRequest(RestRequestType.REQUEST_G, requestSpecification, url);
+         return response;
+ 
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"42632f14-5b9b-4dd7-b3a4-df9554b0a18a\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/ResponseObject/ResponseAccountFailed.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernameTest.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/Tests/UserRegistrationInvalidPasswordTest.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/Tests/UserRegistrationUserAlreadyExistsTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2bMqSzHTkEvkOrW5GUEPpBTYfJw\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"42632f14-5b9b-4dd7-b3a4-df9554b0a18a\" name=\"Changes\" comment=\"\" />\n      <created>1706035301609</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1706035301609</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0ef08a9d76bdc38ab9e5587b9faa15abd0646bc9)
++++ b/.idea/workspace.xml	(date 1706641404689)
+@@ -4,13 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="42632f14-5b9b-4dd7-b3a4-df9554b0a18a" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/test/java/ResponseObject/ResponseAccountFailed.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationEmptyUsernameTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationInvalidPasswordTest.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/UserRegistrationUserAlreadyExistsTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-    </list>
++    <list default="true" id="42632f14-5b9b-4dd7-b3a4-df9554b0a18a" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -19,6 +13,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="package-info" />
++        <option value="Interface" />
+         <option value="Class" />
+       </list>
+     </option>

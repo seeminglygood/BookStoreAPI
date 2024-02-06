@@ -1,7 +1,7 @@
-package Tests;
+package ZzZz;
 
-import RequestObject.RequestAccount;
-import ResponseObject.ResponseAccountFailed;
+import Objects.RequestObject.RequestAccount;
+import Objects.ResponseObject.ResponseAccountFailed;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class UserRegistrationEmptyUsernameTest {
+public class UserRegistrationUserAlreadyExistsTest {
     public String username;
     public String password;
     @Test
@@ -22,8 +22,8 @@ public class UserRegistrationEmptyUsernameTest {
         requestSpecification.baseUri("https://demoqa.com");
         requestSpecification.contentType("application/json");
 
-        username = "";
-        password = "Password!@1234";
+        username = "Letitia";
+        password = "Password!??@#1234";
 
         RequestAccount requestAccount = new RequestAccount(username,password );
         requestSpecification.body(requestAccount);
@@ -32,11 +32,10 @@ public class UserRegistrationEmptyUsernameTest {
         ResponseBody body = response.getBody();
         body.prettyPrint();
 
-        Assert.assertEquals(response.getStatusCode(), 400);
+        Assert.assertEquals(response.getStatusCode(), 406);
 
         ResponseAccountFailed responseAccountFailed = response.body().as(ResponseAccountFailed.class);
-
-        Assert.assertEquals(responseAccountFailed.getCode(), 1200);
-        Assert.assertEquals(responseAccountFailed.getMessage(), "UserName and Password required.");
+        Assert.assertEquals(responseAccountFailed.getCode(), 1204);
+        Assert.assertEquals(responseAccountFailed.getMessage(), "User exists!");
     }
 }

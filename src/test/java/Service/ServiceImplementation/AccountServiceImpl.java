@@ -1,8 +1,8 @@
 package Service.ServiceImplementation;
 
 import Endpoints.AccountEndpoints;
-import RequestObject.RequestAccount;
-import RequestObject.RequestAccountToken;
+import Objects.RequestObject.RequestAccount;
+import Objects.RequestObject.RequestAccountToken;
 import Service.APIService.AccountAPIService;
 import Service.InterfaceService.AccountServiceInterface;
 import io.restassured.response.Response;

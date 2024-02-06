@@ -1,10 +1,12 @@
 package Tests;
 
-import RequestObject.RequestAccount;
-import RequestObject.RequestAccountToken;
-import ResponseObject.ResponseAccountAuthSuccess;
-import ResponseObject.ResponseAccountSuccess;
-import ResponseObject.ResponseTokenSuccess;
+import Actions.AccountActions;
+import Objects.RequestObject.RequestAccount;
+import Objects.RequestObject.RequestAccountToken;
+import Objects.ResponseObject.ResponseAccountAuthSuccess;
+import Objects.ResponseObject.ResponseAccountSuccess;
+import Objects.ResponseObject.ResponseTokenSuccess;
+import com.beust.ah.A;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -17,6 +19,7 @@ public class UserRegistrationSuccessTest {
     public String username;
     public String password;
     public String token;
+    public AccountActions accountActions;
     @Test
     public void testMethod(){
         System.out.println("Step 1 - Create user");
@@ -30,8 +33,8 @@ public class UserRegistrationSuccessTest {
     }
     public void createUser(){
 
-// ***** Define client characteristics / specifications: *****
-// -----------------------------------------------------------------------------------------------------------------------------------------
+ //***** Define client characteristics / specifications: *****
+ //-----------------------------------------------------------------------------------------------------------------------------------------
         // RestAssured.given(): RestAssured is a class in the Rest Assured library
         // it provides a starting point for building HTTP requests for testing RESTful APIs
         // the given() method returns an instance of RequestSpecification
@@ -45,6 +48,8 @@ public class UserRegistrationSuccessTest {
         requestSpecification.baseUri("https://demoqa.com"); //specify baseURL
         requestSpecification.contentType("application/json"); //specify json content type
 
+
+
 // ***** Configure the request: *****
 // -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,7 +58,7 @@ public class UserRegistrationSuccessTest {
 
         // the RequestAccount class is defined under RequestObject package
         // requestAccount is a variable of type RequestAccount
-        // the constructor call above creates a new instance of RequestAccount, initializing it with the provided username and password params
+        // the constructor call creates a new instance of RequestAccount, initializing it with the provided username and password params
         // the newly created RequestAccount object is assigned to the variable requestAccount
         // requestAccount is now referencing an instance of the RequestAccount class
         // now this object can be used to interact with the methods and properties defined in the RequestAccount class
@@ -76,12 +81,12 @@ public class UserRegistrationSuccessTest {
         // obtains the body of the response using the getBody() method of the Response class
         ResponseBody body = response.getBody();
 
-        // prints the response body in a human-readable format
-        // prettyPrint() method is a convenient way to display the response body with proper indentation, making it easier to read
+//        // prints the response body in a human-readable format
+//        // prettyPrint() method is a convenient way to display the response body with proper indentation, making it easier to read
         body.prettyPrint();
 
-// ***** Perform validations *****
-// -----------------------------------------------------------------------------------------------------------------------------------------
+ //***** Perform validations *****
+ //-----------------------------------------------------------------------------------------------------------------------------------------
 
         // validate the HTTP status code of the response received from the server:
         Assert.assertEquals(response.getStatusCode(), 201);

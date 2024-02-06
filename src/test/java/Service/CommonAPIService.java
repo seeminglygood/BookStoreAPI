@@ -1,5 +1,6 @@
 package Service;
 
+import LoggerUtility.LoggerUtility;
 import Rest.RestRequest;
 import Rest.RestRequestType;
 import io.restassured.RestAssured;
@@ -13,7 +14,7 @@ public class CommonAPIService {
         RequestSpecification requestSpecification = RestAssured.given();
         requestSpecification.body(body);
 
-        // to implement here: logs for request/ response
+        APIServiceHelper.requestLogs(requestSpecification, url, RestRequestType.REQUEST_POST);
 
         // calls the internal method performRequest to execute the request
         Response response = performRequest(RestRequestType.REQUEST_POST, requestSpecification, url);

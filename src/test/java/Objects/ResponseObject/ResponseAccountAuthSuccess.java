@@ -1,19 +1,19 @@
-package ResponseObject;
+package Objects.ResponseObject;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class ResponseAccountSuccess {
-    @JsonProperty("userID")
-    private String userID;
+public class ResponseAccountAuthSuccess {
+    @JsonProperty("userId")
+    private String userId;
     @JsonProperty("username")
     private String username;
     @JsonProperty("books")
     private List<BookObject> books;
 
-    public String getUserID() {
-        return userID;
+    public String getUserId() {
+        return userId;
     }
 
     public String getUsername() {
